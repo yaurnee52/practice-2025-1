@@ -1,0 +1,23 @@
+baseURL = 'https://example.org/'
+languageCode = 'en-us'
+title = 'Проектная практика'
+theme = "ananke"
+[menu]
+  [[menu.main]]
+    name = "О проекте"
+    url = "/about/"
+    weight = 1
+
+  [[menu.main]]
+    name = "Участники"
+    url = "/participants/"
+    weight = 2
+
+  [[menu.main]]
+    name = "Журнал"
+    url = "/journal/"
+    weight = 3
+  [[menu.main]]
+    name = "Ресурсы"
+    url = "/resources/"
+    weight = 4
