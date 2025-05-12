@@ -14,6 +14,16 @@ https://projects.mospolytech.ru/cpd_mospolytech
 
 ---
 
-### Figma | Новый дизайн отдела «Проектная деятельность» личного кабинета студента Московского Политеха
+### Прототипы дизайнов в Figma:
 
-https://www.figma.com/design/ecPIgpE5Niel3luG2BaVlP/Untitled?node-id=38-27&t=mH6QaUQMJLIR8KUY-0
+_ЛК студента_
+
+![ЛК студента](/images/qr1.png)
+
+_ЛК преподавателя_
+
+![ЛК преподавателя](/images/qr2.png)
+
+_Сайт ЦПД_
+
+![Сайт ЦПД](/images/qr3.png)
