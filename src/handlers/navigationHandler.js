@@ -1,7 +1,6 @@
 import aboutMenu from '../keyboard/aboutMenu.js'
 import mainMenu from '../keyboard/mainMenu.js'
 
-
 export default async function navigationHandler(ctx) {
 	const action = ctx.callbackQuery.data
 	await ctx.answerCbQuery()
@@ -14,11 +13,14 @@ export default async function navigationHandler(ctx) {
 
 		// Подменю "О проекте"
 		case 'about.goal':
-			await ctx.editMessageText('Улучшение и модернизация цифровой инфраструктуры проектной деятельности университета, расширение функциональных возможностей цифровых сервисов.', {
-				reply_markup: {
-					inline_keyboard: [[{ text: '⬅️ Назад', callback_data: 'about' }]],
-				},
-			})
+			await ctx.editMessageText(
+				'Улучшение и модернизация цифровой инфраструктуры проектной деятельности университета, расширение функциональных возможностей цифровых сервисов.',
+				{
+					reply_markup: {
+						inline_keyboard: [[{ text: '⬅️ Назад', callback_data: 'about' }]],
+					},
+				}
+			)
 			break
 		case 'about.relevance':
 			await ctx.editMessageText(
@@ -70,6 +72,27 @@ export default async function navigationHandler(ctx) {
 				}
 			)
 			break
+
+		case 'about.fact': {
+			await ctx.answerCbQuery()
+			const facts = [
+				'Проект был придуман за чашкой кофе ☕',
+				'Название проекта появилось случайно 😄',
+				'Мы использовали более 10 инструментов 🔧',
+				'Первый прототип провалился, но это был ценный урок 🧠',
+				'На этапе тестирования мы нашли 17 багов 🐞',
+				'Наш заказчик — самый терпеливый человек в мире 😅',
+			]
+
+			const randomFact = facts[Math.floor(Math.random() * facts.length)]
+
+			await ctx.editMessageText(`📌 Интересный факт:\n\n${randomFact}`, {
+				reply_markup: {
+					inline_keyboard: [[{ text: '⬅️ Назад', callback_data: 'about' }]],
+				},
+			})
+			break
+		}
 
 		// Раздел "Участники"
 		case 'participants':
@@ -155,11 +178,36 @@ export default async function navigationHandler(ctx) {
 			await ctx.editMessageText('Ресурсы:', {
 				reply_markup: {
 					inline_keyboard: [
-						[{ text: 'Личный кабинет обучающегося и сотрудника Московского Политеха', url: 'https://e.mospolytech.ru/old/index.php' }],
-						[{ text: 'Центр проектной деятельности Московского Политеха', url: 'https://projects.mospolytech.ru/cpd_mospolytech' }],
-						[{ text: 'Прототип дизайна ЛК студента', url: 'https://www.figma.com/proto/ecPIgpE5Niel3luG2BaVlP/Untitled?node-id=1-169&t=Xz2Gsci4XjkG89RL-1' }],
-						[{ text: 'Прототип дизайна ЛК преподавателя', url: 'https://www.figma.com/design/fbN2huWfAv2qIHHK0k20rd/Untitled?node-id=0-1&p=f&t=bUX0LqmpkJqvJ1xC-0' }],
-						[{ text: 'Прототип дизайна Витрины проектов', url: 'https://www.figma.com/design/SLxRNW4j5pSbDEm3UZY54W/Проектная-деятельность?node-id=0-1&p=f&t=hSDh9zEjSxkuFFrl-0' }],
+						[
+							{
+								text: 'Личный кабинет обучающегося и сотрудника Московского Политеха',
+								url: 'https://e.mospolytech.ru/old/index.php',
+							},
+						],
+						[
+							{
+								text: 'Центр проектной деятельности Московского Политеха',
+								url: 'https://projects.mospolytech.ru/cpd_mospolytech',
+							},
+						],
+						[
+							{
+								text: 'Прототип дизайна ЛК студента',
+								url: 'https://www.figma.com/proto/ecPIgpE5Niel3luG2BaVlP/Untitled?node-id=1-169&t=Xz2Gsci4XjkG89RL-1',
+							},
+						],
+						[
+							{
+								text: 'Прототип дизайна ЛК преподавателя',
+								url: 'https://www.figma.com/design/fbN2huWfAv2qIHHK0k20rd/Untitled?node-id=0-1&p=f&t=bUX0LqmpkJqvJ1xC-0',
+							},
+						],
+						[
+							{
+								text: 'Прототип дизайна Витрины проектов',
+								url: 'https://www.figma.com/design/SLxRNW4j5pSbDEm3UZY54W/Проектная-деятельность?node-id=0-1&p=f&t=hSDh9zEjSxkuFFrl-0',
+							},
+						],
 						[{ text: '⬅️ Назад', callback_data: 'mainMenu' }],
 					],
 				},

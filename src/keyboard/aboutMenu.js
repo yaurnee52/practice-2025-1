@@ -8,6 +8,7 @@ export default function aboutMenu() {
 		[Markup.button.callback('Поставленные задачи', 'about.tasks')],
 		[Markup.button.callback('Взаимодействие с заказчиком', 'about.customer')],
 		[Markup.button.callback('Апробация проекта', 'about.approval')],
+		[Markup.button.callback('📎 Интересный факт', 'about.fact')],
 		[Markup.button.callback('⬅️ Назад', 'back')],
 	])
 }
