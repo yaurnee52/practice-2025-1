@@ -2,7 +2,7 @@ import { Telegraf } from 'telegraf'
 import navigationHandler from './handlers/navigationHandler.js'
 import mainMenu from './keyboard/mainMenu.js'
 
-const bot = new Telegraf('7964875174:AAGnFGtQSfWeIte3e1LbgH-E2sTArC5SUB4')
+const bot = new Telegraf(BOT_TOKEN)
 
 bot.start(ctx => {
 	ctx.reply('Добро пожаловать! Выберите раздел:', mainMenu())
